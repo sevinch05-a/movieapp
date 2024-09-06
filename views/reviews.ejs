@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <h1>Reviews</h1>
+    <ul>
+      <% reviews.forEach(review => { %>
+        <li><%= review.content %></li>
+      <% }) %>
+    </ul>
+    <form action="/reviews" method="POST">
+      <input type="text" name="movieId" placeholder="Movie ID" required>
+      <textarea name="content" placeholder="Review Content" required></textarea>
+      <button type="submit">Add Review</button>
+    </form>
+    <a href="/">Home</a> 
+</body>
+</html>
